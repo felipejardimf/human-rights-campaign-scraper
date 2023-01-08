@@ -5,16 +5,6 @@ import concurrent.futures
 import sys
 
 
-#url inicial
-url = 'https://www.hrc.org/resources/employers/search?q='
-
-req = requests.get(url)
-
-
-if req.status_code != 200:
-    print("Erro ao acessar url")
-    sys.exit(1)
-
 
 
 def  checa_pagina(num_pagina):
@@ -249,11 +239,20 @@ def extracao_completa_empresa(url):
 
 def main():
     
+    
+    #url inicial
+    url = 'https://www.hrc.org/resources/employers/search?q='
 
+    req = requests.get(url)
+
+
+    if req.status_code != 200:
+        print("Erro ao acessar url")
+        sys.exit(1)
+
+  
     # Ao acessar a listagem de empresas, podemos perceber que o site permite que a gente altere a URL e veja os resultados a partir do parametro p <numero da página> , fazendo com que nosso trabalho fique muito mais fácil
-    
-    
-    
+   
     #lógica para descobrir quantidade total de páginas a serem capturadas
 
     num_pagina = 395
