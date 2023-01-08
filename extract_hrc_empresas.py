@@ -2,6 +2,7 @@ import pandas as pd
 from bs4 import BeautifulSoup
 import requests
 import concurrent.futures
+import sys
 
 
 #url inicial
@@ -9,9 +10,10 @@ url = 'https://www.hrc.org/resources/employers/search?q='
 
 req = requests.get(url)
 
-req.status_code
 
-
+if req.status_code != 200:
+    print("Erro ao acessar url")
+    sys.exit(1)
 
 
 
