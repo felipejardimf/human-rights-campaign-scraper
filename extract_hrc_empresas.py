@@ -36,7 +36,7 @@ def  checa_pagina(num_pagina):
         return True
 
 
-
+# extrai os dados iniciais
 def  extract_dados_iniciais(num_pagina):
     '''
     Extrai os dados iniciais das empresas de uma página do site HRC
@@ -53,9 +53,6 @@ def  extract_dados_iniciais(num_pagina):
         URL > URL com dados detalhados da empresa, dentro do HRC
     
     '''
-    
-    from bs4 import BeautifulSoup
-    import requests
     
     try:
         df_empresa = pd.DataFrame()
